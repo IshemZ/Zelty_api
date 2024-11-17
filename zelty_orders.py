@@ -10,8 +10,8 @@ load_dotenv()
 dood_key=os.getenv("API_DOOD_KEY")
 
 # Configurations de base
-api_key_dood = dood_key  # Remplacez par votre clé API
-BASE_URL = "https://api.zelty.fr/2.9"  # Endpoint des
+api_key_dood = dood_key  
+BASE_URL = "https://api.zelty.fr/2.9"  # Endpoint des plats
 HEADERS = {
     "Authorization": f"Bearer {api_key_dood}",
     "Content-Type": "application/json"
@@ -19,10 +19,10 @@ HEADERS = {
 
 ####################### Récupérer les dishes de l'API dood #####################
 
-# Function to fetch dishes
+# Fonction pour fetch le endpoint 'dishes'
 def fetch_dishes():
     response = requests.get(f"{BASE_URL}/catalog/dishes", headers=HEADERS)
-    response.raise_for_status()  # Raise error if the request fails
+    response.raise_for_status()  # Message d'erreur si le statut de la réponse n'est pas 200 -> OK
     return response.json()
 
 # Fetch dishes
