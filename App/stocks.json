@@ -1,0 +1,74 @@
+{
+    "stocks": [
+        {
+            "id": 1,
+            "name": "Tomates",
+            "quantity": 2,
+            "unit": "kg",
+            "threshold": 5
+        },
+        {
+            "id": 2,
+            "name": "Poulet",
+            "quantity": 1,
+            "unit": "kg",
+            "threshold": 2
+        },
+        {
+            "id": 3,
+            "name": "Pommes",
+            "quantity": 5,
+            "unit": "kg",
+            "threshold": 3
+        },
+        {
+            "id": 5,
+            "name": "Lait",
+            "quantity": 1,
+            "unit": "L",
+            "threshold": 0.5
+        },
+        {
+            "name": "Echalotte",
+            "quantity": 6,
+            "unit": "kg",
+            "threshold": 6,
+            "id": 6
+        },
+        {
+            "name": "Oeufs",
+            "quantity": 12,
+            "unit": "unit\u00e9",
+            "threshold": 6,
+            "id": 7
+        },
+        {
+            "name": "Pain",
+            "quantity": 2,
+            "unit": "unit\u00e9",
+            "threshold": 1,
+            "id": 8
+        },
+        {
+            "name": "P\u00e2tes",
+            "quantity": 3,
+            "unit": "kg",
+            "threshold": 2,
+            "id": 9
+        },
+        {
+            "name": "Riz",
+            "quantity": 4,
+            "unit": "kg",
+            "threshold": 2,
+            "id": 10
+        },
+        {
+            "name": "Yaourts",
+            "quantity": 6,
+            "unit": "unit\u00e9",
+            "threshold": 3,
+            "id": 11
+        }
+    ]
+}

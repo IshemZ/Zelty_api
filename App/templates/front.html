@@ -3,26 +3,55 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>État de Stock</title>
+  <title>Gestion des Stocks</title>
 </head>
 <body>
-  <h1>État de Stock</h1>
+  <h1>Gestion des Stocks</h1>
+
+  <!-- Formulaire pour ajouter un nouveau produit -->
+  <form id="addStockForm" onsubmit="addStock(event)">
+    <label for="name">Nom du produit :</label>
+    <input type="text" id="name" placeholder="Nom du produit" required>
+
+    <label for="quantity">Quantité :</label>
+    <input type="number" id="quantity" placeholder="Quantité" required>
+
+    <label for="unit">Unité :</label>
+    <input type="text" id="unit" placeholder="Unité (kg, litre...)" required>
+
+    <label for="threshold">Seuil critique :</label>
+    <input type="number" id="threshold" placeholder="Seuil critique" required>
+
+    <button type="submit">Ajouter</button>
+  </form>
+
+  <hr>
+
+  <h2>Alertes</h2>
+<div id="alerts">
+  <!-- Les alertes seront insérées ici par JavaScript -->
+</div>
+
+<hr>
+
+  <!-- Tableau pour afficher les produits -->
   <table border="1">
     <thead>
       <tr>
-        <th>Produit</th>
+        <th>ID</th>
+        <th>Nom</th>
         <th>Quantité</th>
         <th>Unité</th>
-        <th>Seuil Critique</th>
+        <th>Seuil critique</th>
         <th>Actions</th>
       </tr>
     </thead>
     <tbody id="stockTable">
-      <!-- Les données seront insérées ici -->
+      <!-- Les données seront insérées ici par JavaScript -->
     </tbody>
   </table>
 
   <!-- Inclure le fichier JavaScript -->
-  <script src="app.js"></script>
+  <script src="/static/app.js"></script>
 </body>
 </html>
