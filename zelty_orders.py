@@ -32,7 +32,7 @@ dishes = fetch_dishes()
 dishes_df = pd.DataFrame(dishes)
 
 
-####################### Récupérer les dishes de l'API dood #####################
+####################### Récupérer les menus de l'API dood #####################
 
 
 # Function to fetch menus
@@ -45,9 +45,29 @@ menus = fetch_menus()
 
 menus_df = pd.DataFrame(menus)
 
+
+print("Product catalog exported to products_catalog.xlsx")
+
+####################### Récupérer les options de l'API dood #####################
+
+
+# Function to fetch options
+def fetch_options():
+    response = requests.get(f"{BASE_URL}/catalog/options", headers=HEADERS)
+    response.raise_for_status()
+    return response.json()
+
+options = fetch_options()
+
+options_df = pd.DataFrame(options)
+
+
+
+
+
+
 # Save to Excel
 with pd.ExcelWriter("products_catalog.xlsx") as writer:
     dishes_df.to_excel(writer, sheet_name="Dishes", index=False)
     menus_df.to_excel(writer, sheet_name="Menus", index=False)
-
-print("Product catalog exported to products_catalog.xlsx")
+    options_df.to_excel(writer, sheet_name="Options", index=False)
