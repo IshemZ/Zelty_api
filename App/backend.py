@@ -1,7 +1,7 @@
 from flask import Flask, request, jsonify, render_template
 
 # Initialisation de l'application Flask
-app = Flask(__name__, template_folder="App")  # Spécifier le dossier "App" pour les templates
+app = Flask(__name__, template_folder="../App/templates", static_folder="../App/static")  # Spécifier le dossier pour les templates
 
 # Données simulées pour les stocks
 stocks = [
@@ -12,7 +12,7 @@ stocks = [
 # Route pour afficher la page HTML
 @app.route('/')
 def home():
-    return render_template('front.html')  # Charger "front.html" depuis le dossier App
+    return render_template('front.html')  # Charger front.html depuis le dossier templates
 
 # Route pour récupérer les stocks
 @app.route('/stocks', methods=['GET'])
@@ -36,6 +36,13 @@ def update_stock(id):
         stock.update(data)
         return jsonify(stock)
     return jsonify({"error": "Produit non trouvé"}), 404
+
+# Route pour supprimer un stock
+@app.route('/stocks/<int:id>', methods=['DELETE'])
+def delete_stock(id):
+    global stocks
+    stocks = [item for item in stocks if item["id"] != id]
+    return jsonify({"message": "Stock supprimé"}), 200
 
 if __name__ == '__main__':
     app.run(debug=True)
